@@ -2,6 +2,8 @@
 import os
 import re
 
+print "Checking channels.txt..."
+
 ch = []
 i = 0
 for l in open('channels.txt'):
@@ -17,6 +19,7 @@ if ch_dubel:
     print "channels.txt doubled:", ch_dubel
 ch = set(ch)
 
+print "Checking ref2channels.txt..."
 i = 0
 R = {}
 for l in open('ref2channels.txt'):
@@ -35,17 +38,20 @@ lackofref = ch - set(R.values())
 if lackofref:
     print "No reference for channels:", lackofref
 
+print "Checking picons sets..."
+
 picons = {}
 for root, dir, files in os.walk("picon"):
     if len(dir) == 0 and len(files) > 0:
-	picons[root] = set()
+        print "  ", root
+        picons[root] = set()
         for f in files:
             if f[:-4] not in ch:
                 print "picon set:", root, "unknown channel:", f[:-4]
-        else:
-    	    picons[root].add(f[:-4])
+            else:
+                picons[root].add(f[:-4])
 
         lackof = ch - set([f[:-4] for f in files])
         if lackof:
             print "picon set:", root, "lack of:", lackof
-
+print "Finish."
