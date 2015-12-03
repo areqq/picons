@@ -14,4 +14,7 @@ picon - folder z zestawiami picon, struktura dwupoziomowa: rozmiar, wersja picon
 
 ConsistencyCheck.py - skrypt weryfukujący spójność danych, przed commitem do repo należy go uruchomić i poprawić ewentualne błędy
 
+attic - folder z todo i plikami do przejrzenia/uporządkowania
+
+
 
