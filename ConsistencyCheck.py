@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import re
+import sys
 
 print "Checking channels.txt..."
 
@@ -39,10 +40,9 @@ if lackofref:
     print "No reference for channels:", lackofref
 
 print "Checking picons sets..."
-
 picons = {}
 for root, dir, files in os.walk("picon"):
-    if len(dir) == 0 and len(files) > 0:
+    if (len(dir) == 0 and len(files) > 0 ) and (root in sys.argv[1:] or len(sys.argv) == 1):
         print "  ", root
         picons[root] = set()
         for f in files:
