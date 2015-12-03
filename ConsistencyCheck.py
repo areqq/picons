@@ -31,7 +31,10 @@ for l in open('ref2channels.txt'):
         if not pic in ch:
             print "ref2channels.txt line nr:", i," unknown channel", pic
         else:
-    	    R[ref] = pic
+            if R.has_key(ref):
+                print "ref2channels.txt line nr:", i, "ref dubel", ref, R[ref], pic
+            else:
+    	        R[ref] = pic
     elif l[0] != '#':
         print "ref2channels.txt wrong line nr:", i," :", l
 
