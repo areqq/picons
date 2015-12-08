@@ -11,7 +11,7 @@ for l in open('ref2channels.txt'):
         ref, pic = l.split(None, 2)
         R[ref] = pic
 
-for p in [ 'picon/100x60/gos_marcin', 'picon/220x132/gos_marcin' ]:
+for p in [ 'picon/100x60/gos_marcin', 'picon/220x132/gos_marcin', 'picon/220x132/zet71_transparent_ciemne_tlo_32bit' ]:
     out = 'out/' + p.replace('/','_')
     if os.path.exists(out):
         os.rename(out, out + '.old.' + str(time.time()))
