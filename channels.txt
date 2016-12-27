@@ -144,7 +144,6 @@ planeteplushd
 polonia1
 polotv
 polsat
-polsat2
 polsat2hd
 polsatcafehd
 polsatfilm
